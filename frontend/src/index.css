@@ -1,0 +1,66 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
+} */
+/* .App {
+  padding: 32px;
+}
+h1{
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+h4{
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.todo{
+  position: relative;
+  background-color: aquamarine;
+  padding: 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+.todo:hover{
+  opacity: 0.8;
+}
+.todo .delete-todo{
+  position:absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 24px;
+  height:24px;
+  background-color: #AF1E2D;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+html, body {
+  height: 100%;
+}
+
+.full-screen {
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: center !important;
+  align-items: center !important;
+}
