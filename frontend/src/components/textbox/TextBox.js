@@ -78,7 +78,7 @@ export let TextBox = ({handleChange}) => {
         RestService.redirectToLongURL(short_url, token)
         .then((res)=>{
             handleChange(true)
-            window.open(res.long_Url)
+            window.open(res.long_url)
         })
         .catch((error)=>{
             Toast.fire({

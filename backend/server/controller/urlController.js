@@ -26,9 +26,13 @@ const redirectionToLongUrl = async (req, res) => {
   try {
     let short_url = req.params.shortUrlId;
     if(!short_url) throw new Error("URL not found")
-    const result = await UrlModel.updateOne({short_url: short_url},{$inc:{visit: 1}});
     const url = await UrlModel.findOne({short_url: short_url})
-    res.status(200).json({ message:"URL Found", long_Url: url.long_url });
+    if(url){
+      const result = await UrlModel.findByIdAndUpdate({_id: url._id},{$inc:{visit: 1}});
+      res.status(200).json({message:"URL found", long_url:url.long_url});
+    }else{
+      res.status(404).json({error:"URL not found!"})
+    }
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -56,4 +60,20 @@ const deleteUrl = async (req, res) => {
     }
 }
 
-module.exports = { createShortUrl, redirectionToLongUrl, getAllUrl, deleteUrl };
+const redirection = async (req, res) => {
+  try {
+    let short_url = req.params.shortUrlId;
+    if(!short_url) throw new Error("URL not found")
+    const url = await UrlModel.findOne({short_url: short_url})
+    if(url){
+      const result = await UrlModel.findByIdAndUpdate({_id: url._id},{$inc:{visit: 1}});
+      return res.redirect(url.long_url);
+    }else{
+      res.status(404).json({error:"URL not found!"})
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+module.exports = { createShortUrl, redirectionToLongUrl, getAllUrl, deleteUrl, redirection };
