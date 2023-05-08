@@ -4,8 +4,9 @@
 # Features
 <ul>
 <li>Create short URL</li>
-<li>User Login and Signup with JWT authentication</li>
-<li>Dashboard for managing the URL</li>
+<li>User Login and Signup</li>
+<li>User authentication using JWT</li>
+<li>Dashboard for managing the URLs</li>
 <li>Can view the total visits to the short URL</li>
 </ul>
 
