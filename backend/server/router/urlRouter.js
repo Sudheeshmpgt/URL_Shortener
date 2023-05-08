@@ -6,7 +6,7 @@ route.post('/new', verifyAuth, createShortUrl);
 route.put('/redirect/:shortUrlId', verifyAuth, redirectionToLongUrl);
 route.get('/get-all/:userId', verifyAuth, getAllUrl);
 route.delete('/delete/:id', verifyAuth, deleteUrl);
-route.get('/redirect/:shortUrlId', redirection);
+route.get('/:shortUrlId', redirection);
 
 
 module.exports = route;
